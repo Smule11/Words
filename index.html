@@ -963,36 +963,38 @@
                 console.log("WHAT NODE IS THIS: ", d3this);
                 console.log("WHAT IS d first: ", d);
                 console.log("DO WE HAVE A WORD: ", d.word);
-                console.log("16 CAN WE SELECT THE FIRST NODE?: ", firstChild);
+                console.log("17 CAN WE SELECT THE FIRST NODE?: ", firstChild);
                 console.log("CAN WE SELECT THE FIRST NODE [0]?: ", firstChild[0]);
                 console.log("CAN WE SELECT THE FIRST NODE?: [0][0]", firstChild[0][0]);
                 /*console.log("CAN WE SELECT THE FIRST NODE?: [0][0].text", firstChild[0][0].text);*/
                 /*console.log("CAN WE SELECT THE FIRST NODE?: [0].0", firstChild[0].0); */
-                console.log("CAN WE SELECT THE FIRST NODE?: [0].__data__", firstChild[0][0].__data__);
+                console.log("CAN WE SELECT THE FIRST NODE?: [0].__data__", firstChild[0][0].__data__.word);
                 console.log("CAN WE SELECT THE FIRST NODE?: [0].value", firstChild[0][0].value);
                 console.log("CAN WE SELECT THE FIRST NODE?: [0].nodeValue", firstChild[0][0].nodeValue);
-                                
-                div.transition().
-                    duration(500).
-                    style("opacity", 0).
-                    each("end", function () {
-                        div.style("visibility", "hidden");
-                    });
+                
+                if (firstChild[0][0].__data__.word != d.word) {
+                    div.transition().
+                        duration(500).
+                        style("opacity", 0).
+                        each("end", function () {
+                            div.style("visibility", "hidden");
+                        });
 
-                for (var jj = 0; jj < myData.length; jj++) {
-                    var newWordIndex = jj
+                    for (var jj = 0; jj < myData.length; jj++) {
+                        var newWordIndex = jj
 
-                    if (myData[jj].Word == d.word) {
-                        d3.selectAll('.node').remove();
+                        if (myData[jj].Word == d.word) {
+                            d3.selectAll('.node').remove();
 
-                        console.log("the current centre word ", myData[newWordIndex].Word);
-                        console.log("the Data at stopped iter: ", myData[jj]);
+                            console.log("the current centre word ", myData[newWordIndex].Word);
+                            console.log("the Data at stopped iter: ", myData[jj]);
 
-                        memoryPath.splice(curPos + 1)
-                        memoryPath.push(newWordIndex)
-                        curPos = curPos + 1;
-                        update(newWordIndex, myData);
-                        break;
+                            memoryPath.splice(curPos + 1)
+                            memoryPath.push(newWordIndex)
+                            curPos = curPos + 1;
+                            update(newWordIndex, myData);
+                            break;
+                        }
                     }
                 }
             });
