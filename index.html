@@ -1004,7 +1004,6 @@
             d3.selectAll('#searchButton').on('click', function (d, i) {
                 console.log("word searched for: ", document.getElementById("nSearch").value)
                 var inputText = document.getElementById("nSearch").value;
-                console.log("listOfWords[inputText]: ", listOfWords[inputText]);
                 if (listOfWords[inputText] >= 0) {
                     var foundWord = listOfWords[inputText]
                     console.log("word found: ", foundWord);
