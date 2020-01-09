@@ -70,15 +70,6 @@
             border-color: rgb(20, 20, 20);
         }
         
-        *:focus {
-            outline: 0;
-        }
-        
-        :placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-            color: gray;
-            opacity: 0.5;
-        }
-
         .item1,
         .item2,
         .item4 {
@@ -207,6 +198,9 @@
             color: white;
             font-size: 14px;
             outline-color: rgb(89, 255, 247);
+            outline: 0;
+        }
+            opacity: 0.5;
         }
 
         :target {
@@ -249,7 +243,7 @@
 
         ::placeholder {
             font-size: 14px;
-            color: white;
+            color: gray;
         }
 
         select {
