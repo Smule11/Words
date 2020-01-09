@@ -612,7 +612,7 @@
 
             /* ------------------------ Looked At Words ------------------------ */
 
-            dropData = [0];
+            dropData = [];
 
             for (var i = 0; i < 51; i++) {
                 if (wordyIndex + i < myData.length) {
@@ -663,7 +663,6 @@
                     .attr('text-indent', '20px')
                     .style('padding', '6px')
                     .style('color', 'white')
-                    .on('click', onchange)
 
                 // d3.select('.selectThing')
                 //     .style('display', 'none')
@@ -678,7 +677,8 @@
                     .style("color", function (d) {
                         const pos = d['PoS'];
                         return colours[pos];
-                    });
+                    })
+                    .on('click', onchange);
 
                 isAlreadyAdded[myData[dropData[0]]["Word"]] = true;
             }
