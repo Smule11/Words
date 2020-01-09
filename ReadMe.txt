@@ -1,6 +1,6 @@
 All of the main visualisation's JavaScript and HTML and CSS are in one file. This file is called through the given URL.
 
-https://sel7.host.cs.st-andrews.ac.uk/D3_Submission/words.html
+https://smule11.github.io/Words.html
 
 There is a separate HTML for references which are linked from the main displays page.
 
