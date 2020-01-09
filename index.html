@@ -910,7 +910,7 @@
             });
 
             /* Click-plosion and tooltip*/
-            d3.select("body").on("dblclick", function () {
+            d3.select(".item3").on("dblclick", function () {
                 nodes.forEach(function (o, i) {
                     o.x += Math.sign(Math.random() - 0.5) * (50 + Math.random() * 100);
                     o.y += Math.sign(Math.random() - 0.5) * (50 + Math.random() * 100);
@@ -918,10 +918,10 @@
                 force.resume();
             });
 
-            d3.selectAll(".node").on("dblclick", function (d, i) {
+            /* d3.selectAll(".node").on("dblclick", function (d, i) {
                 d.fixed = !d.fixed;
                 d3.event.stopPropagation();
-            });
+            }); */
 
             /* ------------------------ Edit Tooltip ------------------------ */
 
