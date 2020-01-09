@@ -960,8 +960,8 @@
             d3.selectAll('.node-cir').on('click', function (d, i) {
                 var d3this = d3.select(this);
                 console.log("WHAT NODE IS THIS: ", d3this);
-                console.log("IS THERE TEXT FOR THIS: ", d3.select('d3this > :nth-child(2)'));
-                console.log("CAN WE SELECT THE FIRST NODE?: ", d3.select('.item3 > :nth-child(2)'));
+                console.log("DO WE HAVE A WORD: ", d.word));
+                console.log("CAN WE SELECT THE FIRST NODE?: ", d3.select('.node-cir').word);
                                 
                 div.transition().
                     duration(500).
