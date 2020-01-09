@@ -960,17 +960,6 @@
             d3.selectAll('.node-cir').on('click', function (d, i) {
                 var d3this = d3.select(this);
                 var firstChild = d3.select('.node-text');
-                console.log("WHAT NODE IS THIS: ", d3this);
-                console.log("WHAT IS d first: ", d);
-                console.log("DO WE HAVE A WORD: ", d.word);
-                console.log("17 CAN WE SELECT THE FIRST NODE?: ", firstChild);
-                console.log("CAN WE SELECT THE FIRST NODE [0]?: ", firstChild[0]);
-                console.log("CAN WE SELECT THE FIRST NODE?: [0][0]", firstChild[0][0]);
-                /*console.log("CAN WE SELECT THE FIRST NODE?: [0][0].text", firstChild[0][0].text);*/
-                /*console.log("CAN WE SELECT THE FIRST NODE?: [0].0", firstChild[0].0); */
-                console.log("CAN WE SELECT THE FIRST NODE?: [0].__data__", firstChild[0][0].__data__.word);
-                console.log("CAN WE SELECT THE FIRST NODE?: [0].value", firstChild[0][0].value);
-                console.log("CAN WE SELECT THE FIRST NODE?: [0].nodeValue", firstChild[0][0].nodeValue);
                 
                 if (firstChild[0][0].__data__.word != d.word) {
                     div.transition().
@@ -986,6 +975,8 @@
                         if (myData[jj].Word == d.word) {
                             d3.selectAll('.node').remove();
 
+                            
+                            console.log("the node selected was: ", firstChild[0][0].__data__.word);
                             console.log("the current centre word ", myData[newWordIndex].Word);
                             console.log("the Data at stopped iter: ", myData[jj]);
 
@@ -1011,11 +1002,11 @@
             console.log("listOfWord", listOfWords)
 
             d3.selectAll('#searchButton').on('click', function (d, i) {
-                console.log(document.getElementById("nSearch").value)
+                console.log("word searched for: ", document.getElementById("nSearch").value)
                 var inputText = document.getElementById("nSearch").value;
                 if (listOfWords[inputText]) {
                     var foundWord = listOfWords[inputText]
-                    console.log(foundWord);
+                    console.log("word found: ", foundWord);
                     d3.selectAll('.node').remove();
 
                     memoryPath.splice(curPos + 1)
@@ -1023,8 +1014,8 @@
                     curPos = curPos + 1;
                     update(foundWord, myData)
                 } else {
-                    // swal("Sorry","That word is not in the database");
-                    alert("Sorry, that word is not in the current database");
+                    swal("Sorry","That word is not in the database");
+//                     alert("Sorry, that word is not in the current database");
                     return false;
                 };
 
