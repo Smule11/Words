@@ -663,6 +663,7 @@
                     .attr('text-indent', '20px')
                     .style('padding', '6px')
                     .style('color', 'white')
+                    .on('change', onchange);
 
                 // d3.select('.selectThing')
                 //     .style('display', 'none')
@@ -678,14 +679,13 @@
                         const pos = d['PoS'];
                         return colours[pos];
                     })
-                    .on('click', onchange);
 
                 isAlreadyAdded[myData[dropData[0]]["Word"]] = true;
             }
 
             /* could rename as onclick, but reminds of possibility of other on methods */
             function onchange() {
-                selectValue = d3.select(this.parentNode).property('value')
+                selectValue = d3.select(this).property('value')
                 console.log("selectValue ", selectValue)
 
                 var newIndex = d3.select(this).property('value')
