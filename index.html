@@ -918,10 +918,10 @@
                 force.resume();
             });
 
-            /* d3.selectAll(".node").on("dblclick", function (d, i) {
+            d3.selectAll(".node").on("dblclick", function (d, i) {
                 d.fixed = !d.fixed;
                 d3.event.stopPropagation();
-            }); */
+            });
 
             /* ------------------------ Edit Tooltip ------------------------ */
 
@@ -961,7 +961,9 @@
                 var d3this = d3.select(this);
                 var firstChild = d3.select('.node-text');
                 console.log("WHAT NODE IS THIS: ", d3this);
-                console.log("WHAT IS d: ", d);
+                console.log("WHAT IS d first: ", d);
+                console.log("WHAT IS d[0] second: ", d[0]);
+                console.log("WHAT IS d[0][0] third: ", d[0][0]);
                 console.log("DO WE HAVE A WORD: ", d.word);
                 console.log("CAN WE SELECT THE FIRST NODE?: ", firstChild);
                                 
