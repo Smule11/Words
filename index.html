@@ -685,7 +685,7 @@
 
             /* could rename as onclick, but reminds of possibility of other on methods */
             function onchange() {
-                selectValue = d3.select(this).property('value')
+                selectValue = d3.select(this.parentNode).property('value')
                 console.log("selectValue ", selectValue)
 
                 var newIndex = d3.select(this).property('value')
