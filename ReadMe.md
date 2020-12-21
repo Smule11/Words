@@ -1,4 +1,5 @@
 # Word Visualisation Prototype One
+# Nina Sushko and Sam Llanwarne
 
 All of the main visualisation's JavaScript and HTML and CSS are in one file. This file is called through the given URL.
 
